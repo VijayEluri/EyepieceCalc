@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ep_details_name">Eyepiece Details</string>
+    
+    <string name="app_name">Eyepiece Calc</string>
+<string name="scope_fl_prompt">Telescope focal length (mm)</string>
+<string name="scope_ap_prompt">Telescope Aperture (mm)</string>
+<string name="ep_fl_prompt">Eyepiece focal length (mm)</string>
+<string name="ep_afov_prompt">Eyepiece Apparent FOV (degrees)</string>
+
+<string name="calculate_prompt">Calculate</string>
+<string name="ep_details_mag">Magnfication:</string>
+<string name="ep_details_actual_fov">Actual FOV:</string>
+<string name="ep_details_apparent_fov">Apparent FOV:</string>
+<string name="ep_details_exit_pupil">Exit Pupil:</string>
+</resources>

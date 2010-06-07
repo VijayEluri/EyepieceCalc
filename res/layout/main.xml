@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" android:text="@string/scope_fl_prompt"/>
+<EditText android:text="" android:id="@+id/scope_fl" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/scope_ap_prompt"></TextView>
+<EditText android:text="" android:id="@+id/scope_ap" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+<TextView android:text="@string/ep_fl_prompt" android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+<EditText android:text="" android:id="@+id/ep_fl" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+<TextView android:text="@string/ep_afov_prompt" android:id="@+id/TextView03" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+<EditText android:text="" android:id="@+id/ep_afov" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+
+<Button android:text="@string/calculate_prompt" android:id="@+id/calculate" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+</LinearLayout>
