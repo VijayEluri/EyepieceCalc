@@ -1,18 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="wrap_content"
-  android:layout_height="wrap_content" android:orientation="vertical">
-<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal"><TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ep_details_mag"></TextView><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ep_mag" android:text="&lt;mag&gt;"></TextView>
-</LinearLayout>
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
 
-<LinearLayout android:id="@+id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ep_details_actual_fov"></TextView><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&lt;afov&gt;" android:id="@+id/ep_actual_fov"></TextView></LinearLayout>
+	<TextView android:id="@+id/TextView01" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:text="@string/ep_details_mag"/>
+	<TextView android:id="@+id/ep_mag" 
+				android:layout_toRightOf="@id/TextView01"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" />
+	
+	<TextView android:id="@+id/TextView02" 
+				android:layout_below="@id/TextView01"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/ep_details_actual_fov"/>
+	<TextView android:id="@+id/ep_actual_fov"
+				android:layout_below="@id/TextView01"
+				android:layout_toRightOf="@id/TextView02"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+	
+	<TextView android:id="@+id/TextView03" 
+				android:layout_below="@id/TextView02"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:text="@string/ep_details_apparent_fov"/>
+	<TextView android:id="@+id/ep_apparent_fov"
+				android:layout_below="@id/TextView02"
+				android:layout_toRightOf="@id/TextView03"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+	
+	<TextView android:id="@+id/TextView05" 
+				android:layout_below="@id/TextView03"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:text="@string/ep_details_exit_pupil"/>
+	<TextView android:id="@+id/ep_exit_pupil" 
+				android:layout_below="@id/TextView03"
+				android:layout_toRightOf="@id/TextView05"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" />
 
-
-<LinearLayout android:id="@+id/LinearLayout03" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:id="@+id/TextView03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ep_details_apparent_fov"></TextView><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&lt;apparent fov&gt;" android:id="@+id/ep_apparent_fov"></TextView>
-</LinearLayout>
-
-<LinearLayout android:id="@+id/LinearLayout04" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:id="@+id/TextView05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ep_details_exit_pupil"></TextView><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ep_exit_pupil" android:text="&lt;exit pupil&gt;"></TextView>
-</LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
