@@ -10,12 +10,9 @@ import com.jotabout.eyepiececalc.model.Eyepiece;
  */
 public class EyepieceDAO extends BaseDAO<Eyepiece> {
 
-	// The name and column index of each database column unique to this object.
+	// The names of each database column unique to this object.
 	protected String KEY_AFOV = "apparentFOV";
-	protected int AFOV_COLUMN = 2;
-	
 	protected String KEY_FOCAL_LENGTH = "focalLength";
-	protected int FOCAL_LENGTH_COLUMN = 3;
 
 	public EyepieceDAO(DBAdapter dbAdapter) {
 		super(dbAdapter);

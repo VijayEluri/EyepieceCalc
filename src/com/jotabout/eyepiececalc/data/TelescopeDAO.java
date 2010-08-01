@@ -10,12 +10,9 @@ import com.jotabout.eyepiececalc.model.Telescope;
  */
 public class TelescopeDAO extends BaseDAO<Telescope> {
 	
-	// The name and column index of each database column unique to this object.
+	// The names of each database column unique to this object.
 	protected String KEY_APERTURE = "aperture";
-	protected int APERTURE_COLUMN = 2;
-	
 	protected String KEY_FOCAL_LENGTH = "focalLength";
-	protected int FOCAL_LENGTH_COLUMN = 3;
 
 	public TelescopeDAO(DBAdapter dbAdapter) {
 		super(dbAdapter);

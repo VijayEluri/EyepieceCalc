@@ -25,10 +25,10 @@ public class BaseDAO<T> {
 	// The index (key) column name for use in where clauses.
 	protected String KEY_ID = "id";
 	
-	// The name and column index of each column in your database.
+	// The name of each column in your database.  The ones listed
+	// here are present in all database tables.
 	protected String KEY_NAME = "name";
-	protected int NAME_COLUMN = 1;
-	
+
 	// List of all column names
 	// Subclasses must append to this list to declare the columns they
 	// wish to persist to database.
@@ -83,6 +83,8 @@ public class BaseDAO<T> {
 		
 			// TODO: Return a cursor to a row from the database and
 			// use the values to populate objectInstance via reflection
+			// use type from object to determine which accessor on the
+			// cursor to use.
 
 		} catch (ClassNotFoundException cnfe) {;}
 
