@@ -1,0 +1,30 @@
+h1. EYEPIECE README
+
+Eyepiece Calculator is an app written for the Android OS platform.
+Currently targeting Android 1.5 or later.
+
+Most of the contents of this file is padding to make Github happy.
+
+h2. Database Schema
+
+h3. Telescope
+
+|_. Field |_. Type |
+| id | int |
+| name | String |
+| aperture (mm) | int |
+| focalLength (mm) | int |
+
+h3. Eyepiece
+
+|_. Field |_. Type |
+| id | int |
+| name | String |
+| focalLength (mm) | int |
+| apparentFOV (degrees) | int |
+
+h2. Preferences
+
+* exit pupil
+* focal length units (mm or inches)
+* fov units (degrees decimal, dd.mm.ss, etc)
