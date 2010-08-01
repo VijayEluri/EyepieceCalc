@@ -2,48 +2,47 @@
 <RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:orientation="vertical">
+  android:layout_height="wrap_content">
 
-	<TextView android:id="@+id/TextView01" 
+	<TextView android:id="@+id/ep_mag_label" 
 				android:layout_width="wrap_content" 
-				android:layout_height="wrap_content" 
+				android:layout_height="wrap_content"
 				android:text="@string/ep_details_mag"/>
 	<TextView android:id="@+id/ep_mag" 
-				android:layout_toRightOf="@id/TextView01"
+				android:layout_toRightOf="@id/ep_mag_label"
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content" />
 	
-	<TextView android:id="@+id/TextView02" 
-				android:layout_below="@id/TextView01"
+	<TextView android:id="@+id/ep_actual_fov_label" 
+				android:layout_below="@id/ep_mag_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/ep_details_actual_fov"/>
 	<TextView android:id="@+id/ep_actual_fov"
-				android:layout_below="@id/TextView01"
-				android:layout_toRightOf="@id/TextView02"
+				android:layout_below="@id/ep_mag_label"
+				android:layout_toRightOf="@id/ep_actual_fov_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"/>
 	
-	<TextView android:id="@+id/TextView03" 
-				android:layout_below="@id/TextView02"
+	<TextView android:id="@+id/ep_apparent_fov_label" 
+				android:layout_below="@id/ep_actual_fov_label"
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content" 
 				android:text="@string/ep_details_apparent_fov"/>
 	<TextView android:id="@+id/ep_apparent_fov"
-				android:layout_below="@id/TextView02"
-				android:layout_toRightOf="@id/TextView03"
+				android:layout_below="@id/ep_actual_fov_label"
+				android:layout_toRightOf="@id/ep_apparent_fov_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"/>
 	
-	<TextView android:id="@+id/TextView05" 
-				android:layout_below="@id/TextView03"
+	<TextView android:id="@+id/ep_exit_pupil_label" 
+				android:layout_below="@id/ep_apparent_fov_label"
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content" 
 				android:text="@string/ep_details_exit_pupil"/>
 	<TextView android:id="@+id/ep_exit_pupil" 
-				android:layout_below="@id/TextView03"
-				android:layout_toRightOf="@id/TextView05"
+				android:layout_below="@id/ep_apparent_fov_label"
+				android:layout_toRightOf="@id/ep_exit_pupil_label"
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content" />
 
