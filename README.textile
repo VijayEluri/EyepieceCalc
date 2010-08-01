@@ -25,6 +25,28 @@ h3. Eyepiece
 
 h2. Preferences
 
-* exit pupil
-* focal length units (mm or inches)
-* fov units (degrees decimal, dd.mm.ss, etc)
+* Exit pupil
+* Focal length units (mm or inches)
+* FOV units (degrees decimal, dd.mm.ss, etc)
+* Night Mode theme on/off
+
+h2. TO DO
+
+* Unit Test project
+* Finish DAO layer
+* Model object methods to do calculations
+* Activity classes for:
+** Telescopes
+** Eyepieces
+** Combinations
+** Preferences activity
+* Produce layouts for tabs/screens
+** Telescopes
+*** List
+*** Detail
+*** Add/Edit
+** Eyepieces
+*** List
+*** Add/Edit
+** Combinations
+
