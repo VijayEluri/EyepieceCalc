@@ -32,15 +32,15 @@ h2. Preferences
 
 h2. TO DO
 
-* Unit Test project
-* Finish DAO layer
-* Model object methods to do calculations
-* Activity classes for:
+* [IN PROGRESS] Unit Test project
+* [IN PROGRESS] Model objects and data persistence layer
+* Model object methods to do calculations - mag, FOV, etc.
+* Android Activity classes for:
 ** Telescopes
 ** Eyepieces
 ** Combinations
 ** Preferences activity
-* Produce layouts for tabs/screens
+* Android Layouts for tabs/screens
 ** Telescopes
 *** List
 *** Detail
