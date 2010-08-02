@@ -242,7 +242,11 @@ public class BaseDAO<T> {
 	 */
 	@SuppressWarnings("unchecked")
 	private T createObjectFromCursor(Cursor resultSet) throws ClassNotFoundException {
-		T objectInstance;
+		T objectInstance = null;
+		
+		// Creating an instance of a generic type in Java is unexpectedly difficult...
+		// http://stackoverflow.com/questions/75175/create-instance-of-generic-type-in-java
+		// So here we cheat by depending on the subclass to tell us what type to create.
 		objectInstance = (T) Class.forName( CLASS_NAME );
 		
 		// Populate all declared columns of the return object from result set.
