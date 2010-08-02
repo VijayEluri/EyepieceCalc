@@ -1,3 +1,6 @@
 bin/*
 gen/*
 .settings
+test/bin/*
+test/gen/*
+test/.settings
