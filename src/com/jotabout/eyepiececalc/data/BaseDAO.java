@@ -11,12 +11,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
- * Interface and shared implementation for classes that access the database
- * and CRUD for model objects.
+ * Interface and base implementation for DAO classes that access the
+ * database, including CRUD for model objects.
  * 
  * This class contains methods that move object fields to and from the
  * database in a generic manner.  This is done via reflection to find
- * the getters and setters of the model objects[
+ * the getters and setters of the model objects.
  * 
  * DAO subclasses declare the name of the database table they manage,
  * as well as an array naming of the database columns that should be
@@ -125,6 +125,9 @@ public class BaseDAO<T> {
 
 	/**
 	 * Gets a Cursor with all entries in the database.
+	 * The caller is responsible for managing the lifecycle of
+	 * the returned Cursor.
+	 * 
 	 * @return
 	 */
 	public Cursor getAllEntries() {
@@ -139,17 +142,23 @@ public class BaseDAO<T> {
 		
 		Cursor allEntriesSet = getAllEntries();
 		
-		if (allEntriesSet.moveToFirst()) {
-			do {
-				T objectInstance = null;
-				try {
-					objectInstance = createObjectFromCursor(allEntriesSet);
-				} catch (ClassNotFoundException cnfe) {;}
-				
-				if ( objectInstance != null ) {
-					retVal.add( objectInstance );
-				}
-			} while ( allEntriesSet.moveToNext() );
+		try {
+			if (allEntriesSet.moveToFirst()) {
+				do {
+					T objectInstance = null;
+					try {
+						objectInstance = createObjectFromCursor(allEntriesSet);
+					} catch (ClassNotFoundException cnfe) {;}
+					
+					if ( objectInstance != null ) {
+						retVal.add( objectInstance );
+					}
+				} while ( allEntriesSet.moveToNext() );
+			}
+		} finally {
+			if ( allEntriesSet != null ) {
+				allEntriesSet.close();
+			}
 		}
 		
 		return retVal;
@@ -158,22 +167,27 @@ public class BaseDAO<T> {
 	/**
 	 * Retrieve an object from database by ID.
 	 */
-	@SuppressWarnings("unchecked")
 	public T getEntry(long _rowIndex) {
 		T objectInstance = null;
-		
+		Cursor resultSet = null;
+
 		try {
 			// Return a cursor to a row from the database
-			Cursor resultSet = db.query(DATABASE_TABLE,
+			resultSet = db.query(DATABASE_TABLE,
 					 (String[]) COLUMN_NAMES.toArray(),
 					 KEY_ID +"=" + Long.toString(_rowIndex),
 					 null, null, null, null);
 
-			// Make sure there is a result.
 			if (resultSet.moveToFirst()) {
 				objectInstance = createObjectFromCursor(resultSet);
 			}
-		} catch (ClassNotFoundException cnfe) {;}
+		} 
+		catch (ClassNotFoundException cnfe) {;}
+		finally {
+			if (resultSet != null ) {
+				resultSet.close();
+			}
+		}
 
 		return objectInstance;
 	}
