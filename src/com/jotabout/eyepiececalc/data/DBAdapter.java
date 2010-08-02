@@ -10,7 +10,7 @@ import android.util.Log;
 /**
  * Database adapter.  Initially based on skeleton code from Listing 7-1
  * of "Professional Android 2 Application Development" by Reto Meier,
- * Wrox Press.
+ * Wrox Press, 2010.
  * 
  * @author portuesi
  *

@@ -26,6 +26,10 @@ import android.database.sqlite.SQLiteDatabase;
  * At this time, only Strings and integer data types are supported.
  * No support for inheritance or joins is provided.
  * 
+ * Initially based on skeleton code from Listing 7-1 of
+ * "Professional Android 2 Application Development" by Reto Meier,
+ * Wrox Press, 2010.
+ * 
  * @author portuesi
  *
  * @param <T>
@@ -242,7 +246,11 @@ public class BaseDAO<T> {
 	 */
 	@SuppressWarnings("unchecked")
 	private T createObjectFromCursor(Cursor resultSet) throws ClassNotFoundException {
-		T objectInstance;
+		T objectInstance = null;
+		
+		// Creating an instance of a generic type in Java is unexpectedly difficult...
+		// http://stackoverflow.com/questions/75175/create-instance-of-generic-type-in-java
+		// So here we cheat by depending on the subclass to tell us what type to create.
 		objectInstance = (T) Class.forName( CLASS_NAME );
 		
 		// Populate all declared columns of the return object from result set.
