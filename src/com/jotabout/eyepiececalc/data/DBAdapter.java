@@ -18,8 +18,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBAdapter {
 	
-	private static final String DATABASE_NAME = "epDatabase.db";
-	private static final int DATABASE_VERSION = 1;
+	public static final String DATABASE_NAME = "epDatabase.db";
+	public static final int DATABASE_VERSION = 1;
 	
 	// The index (key) column name for use in where clauses.
 	public static final String KEY_ID = "_id";
@@ -66,7 +66,10 @@ public class DBAdapter {
 	 * Close the database.
 	 */
 	public void close() {
-		db.close();
+		if ( db != null ) {
+			db.close();
+			db = null;
+		}
 	}
 	
 	/**
@@ -80,7 +83,8 @@ public class DBAdapter {
 	/**
 	 * Add a migration for the Adapter to manage.  Each migration creates
 	 * or upgrades one or more database tables at the time the database
-	 * is opened.
+	 * is opened.  At least one migration must be added before the adapter
+	 * can operate properly.
 	 * 
 	 * @param m
 	 */

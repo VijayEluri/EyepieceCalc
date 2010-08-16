@@ -262,7 +262,7 @@ public class BaseDAO<T> implements Migration {
 			}
 		} catch (ClassNotFoundException ignore) {;}
 		
-		sb.append(")");
+		sb.append(");");
 		
 		_db.execSQL(sb.toString());
 	}

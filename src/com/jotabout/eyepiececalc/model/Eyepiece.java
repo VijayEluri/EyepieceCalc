@@ -52,7 +52,7 @@ public class Eyepiece {
 	}
 
 	/**
-	 * Eyepiece apparent FOV, in degress.  This is determined by the optical
+	 * Eyepiece apparent FOV, in degrees.  This is determined by the optical
 	 * design of the eyepiece.
 	 * 
 	 * @return
