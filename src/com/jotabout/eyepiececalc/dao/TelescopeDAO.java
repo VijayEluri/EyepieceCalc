@@ -1,5 +1,7 @@
-package com.jotabout.eyepiececalc.data;
+package com.jotabout.eyepiececalc.dao;
 
+import com.jotabout.eyepiececalc.data.BaseDAO;
+import com.jotabout.eyepiececalc.data.DBAdapter;
 import com.jotabout.eyepiececalc.model.Telescope;
 
 /**
