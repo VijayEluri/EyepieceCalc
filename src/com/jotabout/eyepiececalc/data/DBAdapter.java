@@ -39,7 +39,7 @@ public class DBAdapter {
 	private myDbHelper dbHelper;
 	
 	// List of Migrations to execute for creating, upgrading tables for each DAO class
-	private static final ArrayList<Migration> migrations = new ArrayList<Migration>();
+	private ArrayList<Migration> migrations = new ArrayList<Migration>();
 
 	/**
 	 * Constructor.
@@ -48,7 +48,7 @@ public class DBAdapter {
 	 */
 	public DBAdapter(Context _context) {
 		context = _context;
-		dbHelper = new myDbHelper( context, DATABASE_NAME, null, DATABASE_VERSION );
+		dbHelper = new myDbHelper( context, DATABASE_NAME, null, DATABASE_VERSION, migrations );
 	}
 
 	/**
@@ -91,11 +91,14 @@ public class DBAdapter {
 	public void addMigration( Migration m ) {
 		migrations.add( m );
 	}
-
+	
 	private static class myDbHelper extends SQLiteOpenHelper {
 
-		public myDbHelper(Context context, String name, CursorFactory factory, int version) {
+		private ArrayList<Migration> migrations;
+		
+		public myDbHelper(Context context, String name, CursorFactory factory, int version, ArrayList<Migration> migrations) {
 			super(context, name, factory, version);
+			this.migrations = migrations;
 		}
 
 		@Override

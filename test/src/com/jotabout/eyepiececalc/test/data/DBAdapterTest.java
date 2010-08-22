@@ -10,7 +10,13 @@ import com.jotabout.eyepiececalc.data.DBAdapter;
 import com.jotabout.eyepiececalc.data.Migration;
 
 public class DBAdapterTest extends ActivityInstrumentationTestCase2<EyepieceCalc> {
-	
+
+	public static final String DATABASE_FILE = "epDatabase.db";
+	public static final String DATABASE_TABLE_1 = "mainTable";
+	public static final String DATABASE_TABLE_2 = "otherTable";
+	public static final String KEY_ID = "_id";
+	public static final String KEY_NAME = "name";
+
 	private DBAdapter dba;
 	private Context context;
 
@@ -22,11 +28,11 @@ public class DBAdapterTest extends ActivityInstrumentationTestCase2<EyepieceCalc
 	protected void setUp() throws Exception {
 		super.setUp();
 
-		context = getInstrumentation().getTargetContext();
+		context = getInstrumentation().getTargetContext().getApplicationContext();
 		deleteDatabase();
 
 		dba = new DBAdapter( context );
-		dba.addMigration( new TestMigration( TestMigration.DATABASE_TABLE_1 ) );
+		dba.addMigration( new TestMigration( DATABASE_TABLE_1 ) );
 	}
 
 	@Override
@@ -65,37 +71,36 @@ public class DBAdapterTest extends ActivityInstrumentationTestCase2<EyepieceCalc
 	}
 	
 	public void testAddMigration() {
-		dba.addMigration( new TestMigration( TestMigration.DATABASE_TABLE_2 ) );
+		dba.addMigration( new TestMigration( DATABASE_TABLE_2 ) );
 		dba.open();
 		dba.close();
 
 	}
 	
 	public void testCreateMigrations() {
-		dba.addMigration( new TestMigration( TestMigration.DATABASE_TABLE_2 ) );
+		dba.addMigration( new TestMigration( DATABASE_TABLE_2 ) );
 		dba.open();
 		dba.close();
 	
 		// verify table was created
+
 	}
 	
 	public void testUpgradeMigrations() {
-		dba.addMigration( new TestMigration( TestMigration.DATABASE_TABLE_2 ) );
+		dba.addMigration( new TestMigration( DATABASE_TABLE_2 ) );
 		dba.open();
 		dba.close();
 	
 		// verify tables were upgraded
+
 	}
 	
 	public boolean deleteDatabase() {
-		return context.deleteDatabase( DBAdapter.DATABASE_NAME );
+		boolean success = context.deleteDatabase( DATABASE_FILE );
+		return success;
 	}
 	
 	private class TestMigration implements Migration {
-		public static final String DATABASE_TABLE_1 = "mainTable";
-		public static final String DATABASE_TABLE_2 = "otherTable";
-		public static final String KEY_ID = "_id";
-		public static final String KEY_NAME = "name";
 		
 		private String databaseTable;
 		
