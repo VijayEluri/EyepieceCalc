@@ -19,7 +19,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBAdapter {
 	
 	public static final String DATABASE_NAME = "epDatabase.db";
-	public static final int DATABASE_VERSION = 1;
+	public static int DATABASE_VERSION = 1;
 	
 	// The index (key) column name for use in where clauses.
 	public static final String KEY_ID = "_id";
