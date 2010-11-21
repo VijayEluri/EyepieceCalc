@@ -11,7 +11,7 @@ package com.jotabout.eyepiececalc.model;
  */
 public class Telescope {
 	
-	private int id;
+	private long id;
 	private String name;
 	private int focalLength;
 	private int aperture;
@@ -20,7 +20,7 @@ public class Telescope {
 		super();
 	}
 
-	public Telescope(int id, String name, int focalLength, int aperture) {
+	public Telescope(long id, String name, int focalLength, int aperture) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -32,11 +32,11 @@ public class Telescope {
 	 * Database id
 	 * @return
 	 */
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

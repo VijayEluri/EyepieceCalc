@@ -8,7 +8,7 @@ package com.jotabout.eyepiececalc.model;
  */
 public class Eyepiece {
 	
-	private int id;
+	private long id;
 	private String name;
 	private int focalLength;
 	private int apparentFOV;
@@ -17,12 +17,25 @@ public class Eyepiece {
 		super();
 	}
 
-	public Eyepiece(int id, String name, int focalLength, int apparentFOV) {
+	public Eyepiece(long id, String name, int focalLength, int apparentFOV) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.focalLength = focalLength;
 		this.apparentFOV = apparentFOV;
+	}
+
+	/**
+	 * Database ID.
+	 * 
+	 * @return
+	 */
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	/**
@@ -63,19 +76,6 @@ public class Eyepiece {
 
 	public void setApparentFOV(int apparentFOV) {
 		this.apparentFOV = apparentFOV;
-	}
-
-	/**
-	 * Database ID.
-	 * 
-	 * @return
-	 */
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 }
