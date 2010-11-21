@@ -1,7 +1,7 @@
 h1. EYEPIECE README
 
 Eyepiece Calculator is an app written for the Android OS platform.
-Currently targeting Android 1.5 or later.
+Currently targeting Android 1.6 or later.
 
 Most of the contents of this file is padding to make Github happy.
 
@@ -32,8 +32,8 @@ h2. Preferences
 
 h2. TO DO
 
-* [IN PROGRESS] Unit Test project
-* [IN PROGRESS] Model objects and data persistence layer
+* Robolectric Unit Test project
+** Tests for database adapter classes.
 * Model object methods to do calculations - mag, FOV, etc.
 * Android Activity classes for:
 ** Telescopes
