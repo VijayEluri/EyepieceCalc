@@ -1,6 +1,5 @@
-bin/*
-gen/*
-.settings
-test/bin/*
-test/gen/*
-test/.settings
+bin/
+gen/
+tmp/
+.DS_Store
+.metadata
